@@ -1,0 +1,43 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# dotenv environment variables file
+.env
+
+# IDE/editor specific files
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# OS-specific files
+Thumbs.db
+
+# Environment variables file
+.env
+
+# Ignore .env.local if it's in the project root
+.env.local
+
+# Ignore .env.development.local if it's in the project root
+.env.development.local
+
+# Ignore .env.test.local if it's in the project root
+.env.test.local
+
+# Ignore .env.production.local if it's in the project root
+.env.production.local
+
+# Production build directory
+/build
