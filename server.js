@@ -1,12 +1,13 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import userRoutes from './routes/userRoutes.js';
 import cors from 'cors';
+import userRoutes from './routes/userRoutes.js';
+import tutorRoutes from './routes/tutorRoutes.js';
 
 const app = express();
 const port = 4000;
 
-const uri = `mongodb+srv://98kithome:98kithome@cluster0.ijx96ju.mongodb.net/`
+const uri = `mongodb+srv://98kithome:98kithome@cluster0.ijx96ju.mongodb.net/easy-class`
 
 mongoose.connect(uri)
     .then(() => {
@@ -24,9 +25,15 @@ app.use(cors());
 
 app.use(express.json());
 
-// Route to list all routes
+// Import and use the router
+app.use('/api/student', userRoutes);
+
+// Defining additional routes
 app.get("/", (req, res) => {
-    
+    const uri = "http://localhost"
+    res.json({
+        userLogin: `${uri}:${"/"}`,
+        student: "http://localhost:3000/api/student"
+    });
 });
 
-app.use('/users', userRoutes);
