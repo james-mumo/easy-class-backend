@@ -13,6 +13,7 @@ export const signup = async (req, res) => {
         res.status(201).json({ message: "User registered successfully" });
     } catch (error) {
         res.status(500).json({ message: "Failed to register user", error: error.message });
+
     }
 };
 
@@ -29,6 +30,8 @@ export const login = async (req, res) => {
         res.status(200).json({ message: "Login successful" });
     } catch (error) {
         res.status(500).json({ message: "Failed to login", error: error.message });
+        console.log("first")
+        console.log(error)
     }
 };
 

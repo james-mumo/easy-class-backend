@@ -4,7 +4,7 @@ import * as studentController from '../controllers/studentController.js';
 const router = express.Router();
 
 // Signup route
-router.post('/signup', studentController.signup);
+router.post('/register', studentController.signup);
 
 // Login route
 router.post('/login', studentController.login);

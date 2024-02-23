@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import userRoutes from './routes/userRoutes.js';
 import tutorRoutes from './routes/tutorRoutes.js';
+import studentRoutes from "./routes/studentRoutes.js"
 
 const app = express();
 const port = 4000;
@@ -26,7 +27,7 @@ app.use(cors());
 app.use(express.json());
 
 // Import and use the router
-app.use('/api/student', userRoutes);
+app.use('/api/student', studentRoutes);
 
 // Defining additional routes
 app.get("/", (req, res) => {
