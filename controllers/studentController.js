@@ -10,13 +10,12 @@ export const signup = async (req, res) => {
         }
         const newUser = new Student({ firstName, lastName, username, email, password });
         await newUser.save();
-        res.status(201).json({ message: "User registered successfully" });
+        // Return the newly created user object in response
+        res.status(201).json({ message: "User registered successfully", user: newUser });
     } catch (error) {
         res.status(500).json({ message: "Failed to register user", error: error.message });
-
     }
 };
-
 
 // Login controller
 export const login = async (req, res) => {
@@ -26,14 +25,13 @@ export const login = async (req, res) => {
         if (!user || user.password !== password) {
             return res.status(401).json({ message: "Invalid email or password" });
         }
-        // Here you can generate a token or manage session
-        res.status(200).json({ message: "Login successful" });
+        // Return the logged-in user object in response
+        res.status(200).json({ message: "Login successful", user });
     } catch (error) {
         res.status(500).json({ message: "Failed to login", error: error.message });
-        console.log("first")
-        console.log(error)
     }
 };
+
 
 
 // Select course controller

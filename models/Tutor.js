@@ -25,8 +25,9 @@ const tutorSchema = new Schema({
     sessionsBooked: [{
         studentName: String,
         date: Date,
-        duration: Number // in minutes or hours
+        duration: Number
     }],
+    userType: { type: String, default: "tutor" },
     createdAt: {
         type: Date,
         default: Date.now
